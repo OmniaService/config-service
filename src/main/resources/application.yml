@@ -1,7 +1,22 @@
 server.port: 15000
-spring.cloud.config.server.git.uri: https://github.com/OmniaService/configs.git
 spring.output.ansi.enabled: 'ALWAYS'
 
+logging:
+  level:
+    root: 'WARN'
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    com.omnia: 'DEBUG'
+  pattern.console: '%clr(%d{yy-MM-dd E HH:mm:ss.SSS}){yellow} %clr(%-5p){cyan} %clr(---){faint} %clr(%-45.45logger{0}){blue} %clr(:){red} %clr(%m){faint}%n'
+
+---
+spring:
+  profiles: git
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/OmniaService/configs.git
 ---
 spring:
   profiles: local
@@ -9,4 +24,4 @@ spring:
     config:
       server:
         git:
-          uri: file:///A:/Programmering/Projects/Omnia/configsLocal/
+          uri: file:///C:/Users/alls.INTRA/Projects/Omnia/configsLocal
