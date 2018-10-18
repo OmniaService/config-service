@@ -1,0 +1,14 @@
+localDBDriver: com.mysql.cj.jdbc.Driver
+localDBUrl: jdbc:mysql://localhost:3306/omnia_local?useSSL=false&serverTimezone=UTC
+localDBUser: root
+localDBPass: root
+
+devDBDriver: com.mysql.cj.jdbc.Driver
+devDBUrl: jdbc:mysql://localhost:3306/omnia_dev?useSSL=false&serverTimezone=UTC
+devDBUser: root
+devDBPass: root
+
+h2DBDriver: org.h2.Driver
+h2DBUrl: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
+h2DBUser: sa
+h2DBPass:

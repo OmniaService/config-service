@@ -25,3 +25,11 @@ spring:
       server:
         git:
           uri: file:///C:/Users/alls.INTRA/Projects/Omnia/configsLocal
+---
+spring:
+  profiles: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:./src/main/configs

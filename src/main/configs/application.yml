@@ -1,0 +1,33 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "refresh,health,info,env,restart"
+  context-path: /
+
+feign:
+  hystrix:
+    enabled: false
+
+eureka:
+  instance:
+    statusPageUrlPath: /info
+    healthCheckUrlPath: /health
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:15001/eureka}
+    healthcheck:
+      enabled: true
+
+#logging.pattern.console: '%clr(%d{yy-MM-dd E HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(${PID}){faint} %clr(---){faint} %clr([%8.15t]){cyan} %clr(%-40.40logger{0}){blue} %clr(:){red} %clr(%m){faint}%n'
+
+logging:
+  level:
+    root: 'WARN'
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    com.omnia: 'DEBUG'
+  pattern.console: '%clr(%d{yy-MM-dd E HH:mm:ss.SSS}){yellow} %clr(%-5p){cyan} %clr(---){faint} %clr(%-45.45logger{0}){blue} %clr(:){red} %clr(%m){faint}%n'
