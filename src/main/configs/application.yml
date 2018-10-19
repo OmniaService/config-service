@@ -1,3 +1,14 @@
+spring:
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    driver-class-name:: org.h2.Driver
+    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
+    username: sa
+    password:
+
 management:
   endpoints:
     web:
@@ -18,7 +29,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: ${EUREKA_URI:http://localhost:15001/eureka}
+      defaultZone: http://localhost:15001/eureka
     healthcheck:
       enabled: true
 
