@@ -5,6 +5,9 @@ zuul:
     user:
       path: /users/**
       serviceId: user-service
+    exercise:
+      path: /exercises/**
+      serviceId: exercise-service
     auth:
       path: /auth/**
       service-id: auth-service

@@ -1,0 +1,34 @@
+spring:
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:..\h2DBFile\Database;AUTO_SERVER=TRUE #DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
+    username: sa
+    password:
+---
+spring:
+  profiles: dev
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/omnia_dev?useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+---
+spring:
+  profiles: local
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/omnia_local?useSSL=false&serverTimezone=UTC
+    username: root
+    password: root

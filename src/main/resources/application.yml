@@ -23,20 +23,12 @@ spring:
           uri: https://github.com/OmniaService/configs.git
 ---
 spring:
-  profiles: localWork
+  profiles: local
   cloud:
     config:
       server:
         git:
-          uri: file:///C:/Users/alls.INTRA/Projects/Omnia/configsLocal
----
-spring:
-  profiles: localHome
-  cloud:
-    config:
-      server:
-        git:
-          uri: file:///A:/Programmering/Projects/Omnia/configsLocal
+          uri: file:..\configs
 ---
 spring:
   profiles: native
