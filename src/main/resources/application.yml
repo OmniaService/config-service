@@ -21,6 +21,9 @@ spring:
       server:
         git:
           uri: https://github.com/OmniaService/configs.git
+          clone-on-start: true
+          force-pull: true
+          refresh-rate: 100
 ---
 spring:
   profiles: local
@@ -37,3 +40,11 @@ spring:
       server:
         native:
           search-locations: file:./src/main/configs
+---
+spring:
+  profiles: docker
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:./configs
